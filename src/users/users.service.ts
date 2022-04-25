@@ -13,6 +13,12 @@ export class UsersService {
     return user;
   }
 
+  async show() {
+    const user = await User.find();
+
+    return user;
+  }
+
   async showById(id: number): Promise<User> {
     const user = await this.findById(id);
 
@@ -21,7 +27,7 @@ export class UsersService {
   }
 
   async findById(id: number) {
-    return await User.findOneBy({id:id});
+    return await User.findOneBy({ id: id });
   }
 
   async findByEmail(email: string) {

@@ -16,4 +16,9 @@ export class UsersController {
   show(@Param('id') id: string) {
     return this.usersService.showById(+id);
   }
+
+  @Get()
+  find() {
+    return this.usersService.show();
+  }
 }
