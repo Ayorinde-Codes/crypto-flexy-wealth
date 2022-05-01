@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { User } from './users/entities/user.entity';
+import { WalletTypesModule } from './wallet-types/wallet-types.module';
+import { TransactionTypesModule } from './transaction-types/transaction-types.module';
 
 const entities = [User];
 
@@ -26,6 +28,8 @@ const entities = [User];
     }),
     UsersModule,
     AuthModule,
+    WalletTypesModule,
+    TransactionTypesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
