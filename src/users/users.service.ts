@@ -27,7 +27,7 @@ export class UsersService {
   }
 
   async findById(id: number) {
-    return await User.findOneBy({ id: id });
+    return await User.findOneBy({ id });
   }
 
   async findByEmail(email: string) {

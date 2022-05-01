@@ -20,6 +20,9 @@ export class User extends BaseEntity {
   @Column()
   password: string;
 
+  @Column({ unique: true })
+  username: string;
+
   @Column()
   @CreateDateColumn()
   createdAt: Date;
