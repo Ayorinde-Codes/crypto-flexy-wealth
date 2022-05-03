@@ -22,11 +22,11 @@ export class WalletTypesController {
     return this.walletTypesService.showById(+id);
   }
 
-  @Patch(':id')
-  updateWalletType(
-    @Body() editWalletTypeDto: EditWalletTypeDto,
-    @Param('id') id: string,
-  ) {
-    // return this.walletTypesService.updateWalletType(+id, editWalletTypeDto);
-  }
+  // @Patch(':id')
+  // updateWalletType(
+  //   @Body() editWalletTypeDto: EditWalletTypeDto,
+  //   @Param('id') id: string,
+  // ) {
+  //   // return this.walletTypesService.updateWalletType(+id, editWalletTypeDto);
+  // }
 }

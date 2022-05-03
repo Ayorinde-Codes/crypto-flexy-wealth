@@ -8,8 +8,12 @@ import { AuthModule } from './auth/auth.module';
 import { User } from './users/entities/user.entity';
 import { WalletTypesModule } from './wallet-types/wallet-types.module';
 import { TransactionTypesModule } from './transaction-types/transaction-types.module';
+import { RatesModule } from './rates/rates.module';
+import { WalletTypes } from './wallet-types/entities/wallet-types.entity';
+import Transactiontypes from './transaction-types/entities/transaction-types-entity';
+import { Rate } from './rates/entity/rates.entity';
 
-const entities = [User];
+const entities = [User, WalletTypes, Transactiontypes, Rate];
 
 @Module({
   imports: [
@@ -30,6 +34,7 @@ const entities = [User];
     AuthModule,
     WalletTypesModule,
     TransactionTypesModule,
+    RatesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
