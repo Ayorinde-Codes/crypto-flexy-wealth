@@ -12,8 +12,10 @@ import { RatesModule } from './rates/rates.module';
 import { WalletTypes } from './wallet-types/entities/wallet-types.entity';
 import Transactiontypes from './transaction-types/entities/transaction-types-entity';
 import { Rate } from './rates/entity/rates.entity';
+import { UserWalletsModule } from './user-wallets/user-wallets.module';
+import { UserWallet } from './user-wallets/entitty/user-wallet.entity';
 
-const entities = [User, WalletTypes, Transactiontypes, Rate];
+const entities = [User, WalletTypes, Transactiontypes, Rate, UserWallet];
 
 @Module({
   imports: [
@@ -35,6 +37,7 @@ const entities = [User, WalletTypes, Transactiontypes, Rate];
     WalletTypesModule,
     TransactionTypesModule,
     RatesModule,
+    UserWalletsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -4,10 +4,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
+import { UserWallet } from 'src/user-wallets/entitty/user-wallet.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -22,6 +24,9 @@ export class User extends BaseEntity {
 
   @Column({ unique: true })
   username: string;
+
+  @OneToMany(() => UserWallet, (wallet) => wallet.user)
+  userWallets: UserWallet[];
 
   @Column()
   @CreateDateColumn()
