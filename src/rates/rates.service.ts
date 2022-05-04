@@ -1,11 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { WalletTypesService } from 'src/wallet-types/wallet-types.service';
+import { CreateRatesDto } from './dto/create-rates.dto';
 import { Rate } from './entity/rates.entity';
 
 @Injectable()
 export class RatesService {
-  async create(): Promise<any> {
-    return 'Hello World!';
+  async create(createRateDto: CreateRatesDto) {
+    const rate = Rate.create(createRateDto);
+    return await rate.save();
   }
 
   async show(): Promise<any> {
