@@ -25,7 +25,10 @@ export class UserWallet extends BaseEntity {
   walletType: WalletTypes;
 
   @Column('decimal', { precision: 27, scale: 18 })
-  balance: number;
+  initial_balance: number;
+
+  @Column('decimal', { precision: 27, scale: 18 })
+  actual_balance: number;
 
   @ManyToOne(() => User, (user) => user.userWallets)
   user: User;
