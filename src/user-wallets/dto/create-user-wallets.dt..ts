@@ -9,7 +9,11 @@ export class CreateUserWalletsDto {
 
   @IsNotEmpty()
   @IsNumber({ maxDecimalPlaces: 2 })
-  balance: number;
+  initial_balance: number;
+
+  @IsNotEmpty()
+  @IsNumber({ maxDecimalPlaces: 2 })
+  actual_balance: number;
 
   @IsNotEmpty()
   @IsNumber()
