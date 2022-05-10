@@ -14,6 +14,7 @@ import Transactiontypes from './transaction-types/entities/transaction-types-ent
 import { Rate } from './rates/entity/rates.entity';
 import { UserWalletsModule } from './user-wallets/user-wallets.module';
 import { UserWallet } from './user-wallets/entitty/user-wallet.entity';
+import { UserWalletHistoriesModule } from './user-wallet-histories/user-wallet-histories.module';
 
 const entities = [User, WalletTypes, Transactiontypes, Rate, UserWallet];
 
@@ -38,6 +39,7 @@ const entities = [User, WalletTypes, Transactiontypes, Rate, UserWallet];
     TransactionTypesModule,
     RatesModule,
     UserWalletsModule,
+    UserWalletHistoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
