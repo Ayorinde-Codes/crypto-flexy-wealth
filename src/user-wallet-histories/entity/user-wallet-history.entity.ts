@@ -1,3 +1,4 @@
+import { User } from 'src/users/entities/user.entity';
 import { WalletTypes } from 'src/wallet-types/entities/wallet-types.entity';
 import {
   BaseEntity,
@@ -6,19 +7,13 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
-  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-// import {
-//   DecimalToString,
-//   DecimalTransformer,
-// } from 'src/Util/decimal.transformer';
-import { User } from 'src/users/entities/user.entity';
 
 @Entity()
-export class UserWallet extends BaseEntity {
+export class UserWalletHistory extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -42,15 +37,4 @@ export class UserWallet extends BaseEntity {
   @Column()
   @UpdateDateColumn()
   updatedAt: Date;
-
-  //   @Column({
-  //     name: 'balance',
-  //     type: 'decimal',
-  //     precision: 10,
-  //     scale: 2,
-  //     default: 0.0,
-  //     transformer: new DecimalTransformer(),
-  //   })
-  //   @Transform(DecimalToString(), { toPlainOnly: true })
-  //   public balance: Decimal;
 }

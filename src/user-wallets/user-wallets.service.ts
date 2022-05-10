@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserWalletsDto } from './dto/create-user-wallets.dt.';
+import { CreateUserWalletsDto } from './dto/create-user-wallets.dto';
 import { UserWallet } from './entitty/user-wallet.entity';
 
 @Injectable()
