@@ -27,6 +27,9 @@ export class UserWalletHistory extends BaseEntity {
   @Column('decimal', { precision: 27, scale: 18 })
   actual_balance: number;
 
+  @Column()
+  status: string;
+
   @ManyToOne(() => User, (user) => user.userWallets)
   user: User;
 
