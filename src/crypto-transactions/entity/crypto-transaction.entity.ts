@@ -1,9 +1,6 @@
-import { BaseEntity } from "typeorm";
+import { BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
 
 export class CryptoTransactionEntity extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-
+  @PrimaryGeneratedColumn()
+  id: number;
 }
