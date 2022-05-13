@@ -1,19 +1,15 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { User } from 'src/users/entities/user.entity';
+import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
 import { WalletTypes } from 'src/wallet-types/entities/wallet-types.entity';
 
-export class CreateUserWalletHistoryDto {
+export class CreateTransactionDto {
   @IsNotEmpty()
   @IsNumber()
   walletType: WalletTypes;
 
   @IsNotEmpty()
-  @IsNumber({ maxDecimalPlaces: 2 })
-  initial_balance: number;
-
-  @IsNotEmpty()
-  @IsNumber({ maxDecimalPlaces: 2 })
-  actual_balance: number;
+  @IsNumber()
+  transactionType: Transactiontype;
 
   @IsNotEmpty()
   @IsString()
@@ -21,5 +17,9 @@ export class CreateUserWalletHistoryDto {
 
   @IsNotEmpty()
   @IsNumber()
-  user: User;
+  rate: number;
+
+  @IsNotEmpty()
+  @IsString()
+  type: string;
 }

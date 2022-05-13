@@ -10,13 +10,15 @@ import { WalletTypesModule } from './wallet-types/wallet-types.module';
 import { TransactionTypesModule } from './transaction-types/transaction-types.module';
 import { RatesModule } from './rates/rates.module';
 import { WalletTypes } from './wallet-types/entities/wallet-types.entity';
-import Transactiontypes from './transaction-types/entities/transaction-types-entity';
 import { Rate } from './rates/entity/rates.entity';
 import { UserWalletsModule } from './user-wallets/user-wallets.module';
-import { UserWallet } from './user-wallets/entitty/user-wallet.entity';
+import { UserWallet } from './user-wallets/entity/user-wallet.entity';
 import { UserWalletHistoriesModule } from './user-wallet-histories/user-wallet-histories.module';
+import { TransactionsModule } from './transactions/transactions.module';
+import { CryptoTransactionsModule } from './crypto-transactions/crypto-transactions.module';
+import { Transactiontype } from './transaction-types/entities/transaction-types-entity';
 
-const entities = [User, WalletTypes, Transactiontypes, Rate, UserWallet];
+const entities = [User, WalletTypes, Transactiontype, Rate, UserWallet];
 
 @Module({
   imports: [
@@ -40,6 +42,8 @@ const entities = [User, WalletTypes, Transactiontypes, Rate, UserWallet];
     RatesModule,
     UserWalletsModule,
     UserWalletHistoriesModule,
+    TransactionsModule,
+    CryptoTransactionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

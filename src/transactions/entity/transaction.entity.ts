@@ -1,3 +1,4 @@
+import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
 import { User } from 'src/users/entities/user.entity';
 import { WalletTypes } from 'src/wallet-types/entities/wallet-types.entity';
 import {
@@ -13,19 +14,20 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class UserWalletHistory extends BaseEntity {
+export class Transaction extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
+
+  @ManyToOne(() => User, (user) => user.transactions)
+  user: User;
+
+  @OneToOne(() => Transactiontype)
+  @JoinColumn()
+  transactionType: Transactiontype;
 
   @OneToOne(() => WalletTypes)
   @JoinColumn()
   walletType: WalletTypes;
-
-  @Column('decimal', { precision: 27, scale: 18 })
-  initial_balance: number;
-
-  @Column('decimal', { precision: 27, scale: 18 })
-  actual_balance: number;
 
   @Column({
     type: 'enum',
@@ -34,8 +36,14 @@ export class UserWalletHistory extends BaseEntity {
   })
   status: string;
 
-  @ManyToOne(() => User, (user) => user.userWallets)
-  user: User;
+  @Column({
+    type: 'enum',
+    enum: ['transfer', 'withdrawal', 'deposit'],
+  })
+  type: string;
+
+  @Column()
+  rate: number;
 
   @Column()
   @CreateDateColumn()
