@@ -9,7 +9,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
-import { UserWallet } from 'src/user-wallets/entitty/user-wallet.entity';
+import { UserWallet } from 'src/user-wallets/entity/user-wallet.entity';
+import { Transaction } from 'src/transactions/entity/transaction.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -27,6 +28,9 @@ export class User extends BaseEntity {
 
   @OneToMany(() => UserWallet, (wallet) => wallet.user)
   userWallets: UserWallet[];
+
+  @OneToMany(() => Transaction, (transaction) => transaction.user)
+  transactions: Transaction[];
 
   @Column()
   @CreateDateColumn()

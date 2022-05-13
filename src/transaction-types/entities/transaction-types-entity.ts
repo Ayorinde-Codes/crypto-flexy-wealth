@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity()
-export default class Transactiontypes extends BaseEntity {
+export class Transactiontype extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
