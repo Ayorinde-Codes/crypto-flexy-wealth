@@ -17,8 +17,18 @@ import { UserWalletHistoriesModule } from './user-wallet-histories/user-wallet-h
 import { TransactionsModule } from './transactions/transactions.module';
 import { CryptoTransactionsModule } from './crypto-transactions/crypto-transactions.module';
 import { Transactiontype } from './transaction-types/entities/transaction-types-entity';
+import { Transaction } from './transactions/entity/transaction.entity';
+import { CryptoTransaction } from './crypto-transactions/entity/crypto-transaction.entity';
 
-const entities = [User, WalletTypes, Transactiontype, Rate, UserWallet];
+const entities = [
+  User,
+  WalletTypes,
+  Transactiontype,
+  Rate,
+  UserWallet,
+  Transaction,
+  CryptoTransaction,
+];
 
 @Module({
   imports: [
