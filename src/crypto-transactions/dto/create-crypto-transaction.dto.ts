@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, Length } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
 
 export class CreateCryptoTransactionDto {
