@@ -24,7 +24,7 @@ export class CryptoTransaction extends BaseEntity {
 
   @OneToOne(() => Transactiontype)
   @JoinColumn()
-  transType: Transactiontype;
+  transactionType: Transactiontype;
 
   @Column()
   @CreateDateColumn()
