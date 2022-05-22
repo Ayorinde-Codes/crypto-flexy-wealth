@@ -1,17 +1,21 @@
 import { Injectable } from '@nestjs/common';
+import { CreateCryptoTransactionDto } from './dto/create-crypto-transaction.dto';
+import { CryptoTransaction } from './entity/crypto-transaction.entity';
 
 @Injectable()
 export class CryptoTransactionsService {
-  //todo
-  async findAll(): Promise<any> {
-    return 'This action returns all transactions';
+  async create(createCryptoTransactionDto: CreateCryptoTransactionDto) {
+    const createCryptoTransaction = CryptoTransaction.create(
+      createCryptoTransactionDto,
+    );
+    return await createCryptoTransaction.save();
   }
 
-  async findOne(id: string): Promise<any> {
-    return `This action returns a #${id} transaction`;
+  async show(): Promise<any> {
+    return CryptoTransaction.find();
   }
 
-  async create(transaction: any): Promise<any> {
-    return `This action adds a new transaction: ${transaction}`;
+  async showById(id: number): Promise<any> {
+    return CryptoTransaction.findOneBy({ id });
   }
 }
