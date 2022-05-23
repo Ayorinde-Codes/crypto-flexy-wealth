@@ -1,3 +1,4 @@
+import { CryptoTransaction } from 'src/crypto-transactions/entity/crypto-transaction.entity';
 import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
 import { User } from 'src/users/entities/user.entity';
 import { WalletTypes } from 'src/wallet-types/entities/wallet-types.entity';
@@ -8,6 +9,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -28,6 +30,12 @@ export class Transaction extends BaseEntity {
   @OneToOne(() => WalletTypes)
   @JoinColumn()
   walletType: WalletTypes;
+
+  @OneToMany(
+    () => CryptoTransaction,
+    (cryptoTransaction) => cryptoTransaction.transaction,
+  )
+  cryptoTransaction: CryptoTransaction[];
 
   @Column({
     type: 'enum',
