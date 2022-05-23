@@ -1,9 +1,11 @@
 import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
+import { Transaction } from 'src/transactions/entity/transaction.entity';
 import {
   BaseEntity,
   Column,
   CreateDateColumn,
   JoinColumn,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -25,6 +27,9 @@ export class CryptoTransaction extends BaseEntity {
   @OneToOne(() => Transactiontype)
   @JoinColumn()
   transactionType: Transactiontype;
+
+  @ManyToOne(() => Transaction, (transaction) => transaction.cryptoTransaction)
+  transaction: Transaction;
 
   @Column()
   @CreateDateColumn()
