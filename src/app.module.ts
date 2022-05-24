@@ -19,6 +19,7 @@ import { CryptoTransactionsModule } from './crypto-transactions/crypto-transacti
 import { Transactiontype } from './transaction-types/entities/transaction-types-entity';
 import { Transaction } from './transactions/entity/transaction.entity';
 import { CryptoTransaction } from './crypto-transactions/entity/crypto-transaction.entity';
+import { FiatTransactionsModule } from './fiat-transactions/fiat-transactions.module';
 
 const entities = [
   User,
@@ -54,6 +55,7 @@ const entities = [
     UserWalletHistoriesModule,
     TransactionsModule,
     CryptoTransactionsModule,
+    FiatTransactionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
