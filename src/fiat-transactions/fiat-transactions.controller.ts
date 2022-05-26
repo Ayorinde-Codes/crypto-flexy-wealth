@@ -3,5 +3,7 @@ import { FiatTransactionsService } from './fiat-transactions.service';
 
 @Controller('fiat-transactions')
 export class FiatTransactionsController {
-  constructor(private readonly fiatTransactionsService: FiatTransactionsService) {}
+  constructor(
+    private readonly fiatTransactionsService: FiatTransactionsService,
+  ) {}
 }
