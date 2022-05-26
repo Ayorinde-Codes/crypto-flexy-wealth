@@ -11,7 +11,9 @@ describe('FiatTransactionsController', () => {
       providers: [FiatTransactionsService],
     }).compile();
 
-    controller = module.get<FiatTransactionsController>(FiatTransactionsController);
+    controller = module.get<FiatTransactionsController>(
+      FiatTransactionsController,
+    );
   });
 
   it('should be defined', () => {

@@ -4,6 +4,6 @@ import { FiatTransactionsController } from './fiat-transactions.controller';
 
 @Module({
   controllers: [FiatTransactionsController],
-  providers: [FiatTransactionsService]
+  providers: [FiatTransactionsService],
 })
 export class FiatTransactionsModule {}
