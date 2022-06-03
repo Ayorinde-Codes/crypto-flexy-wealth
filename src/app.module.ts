@@ -20,6 +20,7 @@ import { Transactiontype } from './transaction-types/entities/transaction-types-
 import { Transaction } from './transactions/entity/transaction.entity';
 import { CryptoTransaction } from './crypto-transactions/entity/crypto-transaction.entity';
 import { FiatTransactionsModule } from './fiat-transactions/fiat-transactions.module';
+import { FiatTransaction } from './fiat-transactions/entity/fiat-transaction.entity';
 
 const entities = [
   User,
@@ -29,6 +30,7 @@ const entities = [
   UserWallet,
   Transaction,
   CryptoTransaction,
+  FiatTransaction,
 ];
 
 @Module({
