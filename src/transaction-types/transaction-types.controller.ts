@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CreateTransactionTypesDto } from './dto/create-transaction-type.dto';
 import { TransactionTypesService } from './transaction-types.service';
 
@@ -16,5 +16,10 @@ export class TransactionTypesController {
   @Get()
   show() {
     return this.transactionTypesService.show();
+  }
+
+  @Get(':id')
+  showById(@Param('id') id: string) {
+    return this.transactionTypesService.showById(+id);
   }
 }
