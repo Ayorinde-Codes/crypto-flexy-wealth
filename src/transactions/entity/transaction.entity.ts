@@ -1,4 +1,5 @@
 import { CryptoTransaction } from 'src/crypto-transactions/entity/crypto-transaction.entity';
+import { FiatTransaction } from 'src/fiat-transactions/entity/fiat-transaction.entity';
 import { Transactiontype } from 'src/transaction-types/entities/transaction-types-entity';
 import { User } from 'src/users/entities/user.entity';
 import { WalletTypes } from 'src/wallet-types/entities/wallet-types.entity';
@@ -36,6 +37,12 @@ export class Transaction extends BaseEntity {
     (cryptoTransaction) => cryptoTransaction.transaction,
   )
   cryptoTransaction: CryptoTransaction[];
+
+  @OneToMany(
+    () => FiatTransaction,
+    (fiatTransaction) => fiatTransaction.transaction,
+  )
+  fiatTransaction: FiatTransaction[];
 
   @Column({
     type: 'enum',
